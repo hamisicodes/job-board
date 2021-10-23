@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG',True)
+DEBUG = os.environ.get('DEBUG', True)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'job_board.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME','job_board'),
-        'USER': os.environ.get('DB_USER','hamisi'),
-        'PASSWORD': os.environ.get('DB_PASSWORD',''),
-        'PORT': os.environ.get('PORT',5432)
+        'NAME': os.environ.get('DB_NAME', 'job_board'),
+        'USER': os.environ.get('DB_USER', 'hamisi'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', ''),
+        'PORT': os.environ.get('PORT', 5432)
 
     },
 }

@@ -19,7 +19,7 @@ $python manage.py runserver
 ```
 
 ###  Production
-Import this [collection](https://www.getpostman.com/collections/035a692b97fbd7eb7bf5) on postman to view the APIs
+Import this public collection link https://www.getpostman.com/collections/035a692b97fbd7eb7bf5 on postman to view the APIs
 set Variables:
 - PROD: 'https://job-board-1.herokuapp.com`
 - LOCAL: 'http://127.0.0.1:8000' (Incase your running this locally)
@@ -31,5 +31,5 @@ set Variables:
 __`N|B`__:- Once your signed in, the token will be saved into a `cookie` and therefore you can successfully make requests to the endpoints as an `authenticated user` .If `cookie` is not available(Not signed in, requests to other endpoints will fail)
 
 ### API Docs
-- Find the url for the published API doc `https://documenter.getpostman.com/view/11614732/UV5ahGSZ`
+- Find the url for the published API doc https://documenter.getpostman.com/view/11614732/UV5ahGSZ
 

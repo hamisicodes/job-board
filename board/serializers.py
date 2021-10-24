@@ -10,7 +10,7 @@ class PostSerializer(serializers.ModelSerializer):
         fields = [
 
             'id', 'title', 'link', 'creation_date',
-            'upvotes', 'author'
+            'amount_of_upvotes', 'author', 'author_name'
         ]
 
 
@@ -22,6 +22,5 @@ class CommentSerializer(serializers.ModelSerializer):
         fields = [
 
             'id', 'post', 'author', 'creation_date',
-            'content', 'creation_date'
+            'content', 'creation_date', 'author_name'
         ]
-

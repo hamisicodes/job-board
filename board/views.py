@@ -83,7 +83,6 @@ class PostView(mixins.RetrieveModelMixin,
         if obj and not is_permission_allowed(request, obj):
             raise PermissionDenied()
 
-        request.data['author'] = request.user.id
         return self.destroy(request, *args, **kwargs)
 
 
@@ -96,8 +95,8 @@ class CommentsView(mixins.ListModelMixin, mixins.CreateModelMixin,
     serializer_class = CommentSerializer
 
     def get(self, request, *args, **kwargs):
-        # if not is_authenticated(request):
-        #     raise AuthenticationFailed('Unauthenticated')
+        if not is_authenticated(request):
+            raise AuthenticationFailed('Unauthenticated')
 
         return self.list(request, *args, **kwargs)
 
@@ -146,5 +145,4 @@ class CommentView(mixins.RetrieveModelMixin,
         if obj and not is_permission_allowed(request, obj):
             raise PermissionDenied()
 
-        request.data['author'] = request.user.id
         return self.destroy(request, *args, **kwargs)

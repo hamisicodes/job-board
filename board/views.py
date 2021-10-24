@@ -1,9 +1,11 @@
 import jwt
 from rest_framework import generics, mixins
-from .serializers import PostSerializer, CommentSerializer
 from rest_framework.exceptions import AuthenticationFailed, PermissionDenied
+from rest_framework.views import APIView
+from rest_framework.response import Response
 from .models import Post, Comment
 from users.models import CustomUser
+from .serializers import PostSerializer, CommentSerializer
 
 
 def is_authenticated(request, *args, **kwargs):
@@ -146,3 +148,17 @@ class CommentView(mixins.RetrieveModelMixin,
             raise PermissionDenied()
 
         return self.destroy(request, *args, **kwargs)
+
+
+class UpvoteView(APIView):
+    def post(self, request, *args, **kwargs):
+        if not is_authenticated(request):
+            raise AuthenticationFailed('Unauthenticated')
+
+        pk = kwargs.pop('pk')
+        post = Post.objects.filter(pk=pk).first()
+        post.upvotes.add(request.user)
+        post.save()
+
+        serializer = PostSerializer(post)
+        return Response(serializer.data)

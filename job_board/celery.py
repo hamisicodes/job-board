@@ -14,8 +14,14 @@ app = Celery('job_board',
 
 app.conf.beat_schedule = {
     'reset-post-upvotes-count': {
-        'task': "job_board.tasks.reset_upvotes",
-        'schedule': crontab(hour='23', minute=0)
+        'task': 'job_board.tasks.reset_upvotes',
+        'schedule': crontab(hour=0, minute=0)  # everyday at midnight
+    },
+
+    # todo:Remove from production
+    'test-task': {
+        'task': 'job_board.tasks.test_task',
+        'schedule': crontab(minute='*/5')
     }
 }
 

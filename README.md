@@ -30,3 +30,6 @@ set Variables:
 ...and voila start your signup process into the API , then sign in(using the sign in endpoint).
 __`N|B`__:- Once your signed in, the token will be saved into a `cookie` and therefore you can successfully make requests to the endpoints as an `authenticated user` .If `cookie` is not available(Not signed in, requests to other endpoints will fail)
 
+### API Docs
+- Find the url for the published API doc `https://documenter.getpostman.com/view/11614732/UV5ahGSZ`
+

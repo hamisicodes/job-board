@@ -9,8 +9,8 @@ class Post(models.Model):
     title = models.CharField(max_length=50, blank=True, null=True)
     link = models.URLField(blank=True, null=True)
     creation_date = models.DateTimeField(auto_now_add=True)
-    amount_of_upvotes = models.ManyToManyField(
-        CustomUser, related_name='voted_posts')
+    upvotes = models.ManyToManyField(
+        CustomUser, related_name='voted_posts', blank=True)
     author = models.ForeignKey(
         CustomUser, on_delete=models.CASCADE, related_name="authored_posts")
 

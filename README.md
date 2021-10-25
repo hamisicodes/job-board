@@ -1,9 +1,9 @@
 #### News board - PS: (A wrong name ~~`job board`~~ is mistakenly used instead of `News Board`) - Will migrate it it into another repository soon for readablity
 
 ### Set up (Using Docker)
-clone this repository 
-Head into the projects folder
-Build the Image and obtain the container using Docker
+1. clone this repository 
+1. Head into the projects folder
+1. Build the Image and obtain the container using Docker
 
 ```bash
 $ git clone https://github.com/hamisicodes/job-board.git

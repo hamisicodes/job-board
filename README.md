@@ -1,6 +1,22 @@
 #### News board - PS: (A wrong name ~~`job board`~~ is mistakenly used instead of `News Board`) - Will migrate it it into another repository soon for readablity
 
-#### Set up
+### Set up (Using Docker)
+clone this repository 
+Head into the projects folder
+Build the Image and obtain the container using Docker
+
+```bash
+$ git clone https://github.com/hamisicodes/job-board.git
+$ cd job-board
+$ docker-compose up --build 
+$ docker-compose run web python3 manage.py migrate
+
+```
+- Then Head to postman to start making endpoints requests
+
+
+
+### Set up (Without Docker)
 1. clone this repository 
 1. Head into the projects folder
 1. Activate a virtual environment for your project and environment variables specified in `local.env` file
@@ -9,12 +25,12 @@
 1. Install all dependencies/extensions in the requirments.txt file
 1. Run app
 
-```
-$git clone https://github.com/hamisicodes/job-board.git
-$cd job-board
-$python3 -m venv <name_of_your_virtual_environment> eg: $python3 -m venv venv
-$pip install -r requirments.txt
-$python manage.py runserver
+```bash
+$ git clone https://github.com/hamisicodes/job-board.git
+$ cd job-board
+$ python3 -m venv <name_of_your_virtual_environment> eg: $python3 -m venv venv
+$ pip install -r requirments.txt
+$ python manage.py runserver
 
 ```
 
@@ -32,4 +48,7 @@ __`N|B`__:- Once your signed in, the token will be saved into a `cookie` and the
 
 ### API Docs
 - Find the url for the published API doc https://documenter.getpostman.com/view/11614732/UV5ahGSZ
+
+### Developer
+For information send me an email at ngaohamisi@gmail.com
 

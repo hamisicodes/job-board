@@ -37,7 +37,7 @@ $ python manage.py runserver
 ###  Production
 Import this public collection link https://www.getpostman.com/collections/035a692b97fbd7eb7bf5 on postman to view the APIs
 set Variables:
-- PROD: 'https://job-board-1.herokuapp.com`
+- PROD: 'https://newz-board.herokuapp.com/`
 - LOCAL: 'http://127.0.0.1:8000' (Incase your running this locally)
 - name: `<Your preffered username>`
 - email: `<Your preffered email address>`
